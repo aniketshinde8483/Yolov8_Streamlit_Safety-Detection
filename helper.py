@@ -12,6 +12,7 @@ def load_model(model_path):
     return YOLO(model_path)
 
 def predict_image(model, image, confidence):
+    image = image.convert("RGB")  # Ensure image has 3 channels
     image_array = np.array(image)
     results = model.predict(image_array, conf=confidence)
     return results
