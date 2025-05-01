@@ -1,4 +1,6 @@
 # app.py
+import os
+os.environ["STREAMLIT_WATCH_FILE"] = "false"
 
 import streamlit as st
 import settings
@@ -56,9 +58,10 @@ if source_type == settings.SOURCES_LIST[1]:
         st.video(uploaded_video)
         st.write("Processing Video...")
 
+        # Process the video using the helper function
         output_path = helper.process_video(model, video_path, confidence)
         if os.path.exists(output_path):
-            st.success("Detection Completed!")
+            st.success(f"Detection Completed! Video saved to: {output_path}")
             st.video(output_path)
         else:
             st.error("Error processing video.")

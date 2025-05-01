@@ -23,10 +23,23 @@ def plot_boxes(results):
     counts = Counter([res.names[int(cls)] for cls in res.boxes.cls]) if res.boxes else {}
     return plotted[:, :, ::-1], counts  # RGB output
 
+# helper.py
+
+import os
+
 def process_video(model, video_path, confidence):
     cap = cv2.VideoCapture(video_path)
-    temp_output = tempfile.NamedTemporaryFile(delete=False, suffix=".mp4")
-    output_path = temp_output.name
+
+    # Ensure the output directory exists
+    output_dir = "output"
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Generate a unique filename
+    base_name = "output"
+    suffix = 1
+    while os.path.exists(os.path.join(output_dir, f"{base_name}_{suffix}.mp4")):
+        suffix += 1
+    output_path = os.path.join(output_dir, f"{base_name}_{suffix}.mp4")
 
     width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
@@ -40,10 +53,13 @@ def process_video(model, video_path, confidence):
         if not ret:
             break
 
+        # Predict on the frame
         results = model.predict(frame, conf=confidence)
         res = results[0]
-        plotted = res.plot()
-        out.write(plotted)
+
+        # Plot the results and ensure the frame is in BGR format
+        plotted_frame = res.plot()
+        out.write(plotted_frame)
 
     cap.release()
     out.release()
