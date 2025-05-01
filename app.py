@@ -10,7 +10,7 @@ import tempfile
 import os
 
 st.set_page_config(page_title="YOLOv8 Detection", page_icon="⛑️", layout="wide")
-st.title("Universal Safety Detection 🦺👷‍♂️")
+st.title("🦺👷‍♂️Universal Safety Detection👷‍♂️🦺 ")
 
 # Sidebar
 st.sidebar.header("Configuration")
