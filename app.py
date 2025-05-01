@@ -9,6 +9,10 @@ from PIL import Image
 import tempfile
 import os
 
+MODEL_URL = "https://drive.google.com/file/d/19Mh2Z0J9rrBC9uCtuTOod6TcA7JiO4cQ/view?usp=drive_link"
+download_model(MODEL_URL, settings.MODEL_PATH)
+model = helper.load_model(settings.MODEL_PATH)
+
 st.set_page_config(page_title="YOLOv8 Detection", page_icon="⛑️", layout="wide")
 st.title("🦺👷‍♂️Universal Safety Detection👷‍♂️🦺 ")
 
