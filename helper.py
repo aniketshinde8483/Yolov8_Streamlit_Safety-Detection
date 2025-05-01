@@ -8,6 +8,13 @@ from collections import Counter
 from PIL import Image
 import streamlit as st
 
+import urllib.request
+def download_model(model_url, model_path):
+    if not os.path.exists(model_path):
+        os.makedirs(os.path.dirname(model_path), exist_ok=True)
+        urllib.request.urlretrieve(model_url, model_path)
+
+
 def load_model(model_path):
     return YOLO(model_path)
 
