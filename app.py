@@ -8,6 +8,8 @@ import helper
 from PIL import Image
 import tempfile
 import os
+from helper import download_model
+
 
 MODEL_URL = "https://drive.google.com/file/d/19Mh2Z0J9rrBC9uCtuTOod6TcA7JiO4cQ/view?usp=drive_link"
 download_model(MODEL_URL, settings.MODEL_PATH)
