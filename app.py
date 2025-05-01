@@ -1,6 +1,6 @@
 # app.py
 import os
-os.environ["STREAMLIT_WATCH_FILE"] = "false"
+os.environ["STREAMLIT_WATCH_FILE"] = "none"
 
 import streamlit as st
 import settings
