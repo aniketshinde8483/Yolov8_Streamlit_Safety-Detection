@@ -32,7 +32,7 @@ if source_type == settings.SOURCES_LIST[0]:
             image = Image.open(image_file)
 
             with col1:
-                st.image(image, caption="Original", use_column_width=True)
+                st.image(image, caption="Original", use_container_width=True)
 
             with col2:
                 results = helper.predict_image(model, image, confidence)
