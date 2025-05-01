@@ -37,7 +37,7 @@ if source_type == settings.SOURCES_LIST[0]:
             with col2:
                 results = helper.predict_image(model, image, confidence)
                 plotted, counts = helper.plot_boxes(results)
-                st.image(plotted, caption="Detected", use_column_width=True)
+                st.image(plotted, caption="Detected", use_container_width=True)
 
                 with st.expander("Results"):
                     if counts:
