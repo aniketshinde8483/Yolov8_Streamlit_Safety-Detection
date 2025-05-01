@@ -9,8 +9,8 @@ from PIL import Image
 import tempfile
 import os
 
-st.set_page_config(page_title="YOLOv8 Detection", page_icon="🤖", layout="wide")
-st.title("🟢 Universal Object Detection")
+st.set_page_config(page_title="YOLOv8 Detection", page_icon="⛑️", layout="wide")
+st.title("Universal Safety Detection 🦺👷‍♂️")
 
 # Sidebar
 st.sidebar.header("Configuration")
