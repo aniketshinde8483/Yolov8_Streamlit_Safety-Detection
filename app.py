@@ -1,7 +1,7 @@
 # app.py
 import os
 os.environ["STREAMLIT_WATCH_FILE"] = "none"
-
+import torch
 import streamlit as st
 import settings
 import helper
