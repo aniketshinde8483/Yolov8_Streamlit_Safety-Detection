@@ -9,7 +9,7 @@ from PIL import Image
 import tempfile
 import os
 from helper import download_model
-
+torch.classes.__path__ = [] 
 
 MODEL_URL = ""
 download_model(MODEL_URL, settings.MODEL_PATH)
