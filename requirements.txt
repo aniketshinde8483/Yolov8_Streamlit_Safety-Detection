@@ -5,3 +5,4 @@ Pillow
 numpy
 torch
 opencv-python-headless
+libgl1-mesa-glx
