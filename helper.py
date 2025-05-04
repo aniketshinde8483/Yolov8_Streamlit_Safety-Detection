@@ -73,7 +73,7 @@ def process_video(model, video_path, confidence):
     return output_path
 
 def process_webcam(model, conf):
-    cap = cv2.VideoCapture(0)
+    cap = cv2.VideoCapture(1)
     st_frame = st.empty()
 
     while st.session_state["run"]:
