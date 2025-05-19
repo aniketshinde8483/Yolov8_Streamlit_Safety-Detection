@@ -3,9 +3,6 @@
 IMAGE = "Image"
 VIDEO = "Video"
 WEBCAM = "Webcam"
+SOURCES_LIST = [IMAGE, VIDEO, WEBCAM]
 
-
-SOURCES_LIST = ["Image", "Video", "Webcam"]
-
-MODEL_PATH = "weights/ppe.pt"  # Your YOLOv8 model this is localy traind best.pt
-#MODEL_PATH = "weights\\bestsafety.pt"  # Your YOLOv8 model this is localy traind best.pt 
+MODEL_PATH = "weights/best_150.pt"
