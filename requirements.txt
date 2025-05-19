@@ -1,7 +1,7 @@
 streamlit
-ultralytics
 Pillow
 numpy
-torch
 opencv-python-headless
 dill>=0.4.0
+ultralytics>=8.0.20  # or latest stable version you want
+torch>=2.0.0  # or the torch version you want compatible with ultralytics
